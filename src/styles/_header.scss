@@ -1,0 +1,52 @@
+.first-clase {
+  background: {
+    image: url(assets/images/loquor.jpg);
+    size: cover;
+  }
+  height: 100%;
+
+  header {
+    display: flex;
+    flex-direction: 'row';
+    width: 100%;
+    padding: 60px 200px;
+  }
+
+  .logo {
+    flex: 1;
+
+    img {
+      max-width: 250px;
+    }
+  }
+  
+  .menu {
+    flex: 1;
+    text-align: right;
+
+    ul {
+      li {
+        display: inline-block;
+      }
+      a {
+        color: #fff;
+      }
+    }
+  }
+
+  a {
+    color: #fff;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+
+    &.start {
+      background: #c59643;
+      margin-left: 30px;
+      padding: 9px 17px 6px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      font-size: 11px;
+    }
+  }
+}
