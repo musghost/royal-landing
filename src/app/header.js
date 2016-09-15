@@ -9,14 +9,6 @@ export class Header extends Component {
             <img src="assets/images/royal.png" />
           </div>
           <div className='menu'>
-            <ul>
-              <li>
-                <a href="mailto:hola@getroyal.mx">Royal para negocios</a>
-              </li>
-              <li>
-                <a href="#" className='start'>Entrar</a>
-              </li>
-            </ul>
             <ul className="social-net">
               <li>
                 <a href="https://www.facebook.com/getroyalDF/" target="_blank">

@@ -11,12 +11,30 @@ body, html {
   position: relative;
 }
 
+* {
+  box-sizing: border-box;
+  &:after,
+  &:before {
+    box-sizing: border-box;
+  }
+}
+
+section {
+  box-sizing: content-box;
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
 .first-clase {
   background: {
     image: url(assets/images/background.jpg);
     size: cover;
     color: #2f3146;
   }
+  box-sizing: border-box;
   min-height: 100%;
   position: relative;
   padding-bottom: 44%;
@@ -24,9 +42,14 @@ body, html {
   @media screen and (max-width: 990px) {
     min-height: auto;
     padding-bottom: 0;
+    box-sizing: content-box;
 
     .cup {
       display: none;
+    }
+
+    .triangle {
+      bottom: -10px !important;
     }
   }
 
@@ -123,7 +146,7 @@ body, html {
   }
 
   .social-net {
-    margin-top: 35px;
+    margin-top: 25px;
 
     li {
       &:before {
@@ -329,6 +352,17 @@ body, html {
 .features {
   text-align: center;
   padding: 60px 0;
+  zoom: 1;
+
+  &:before,
+  &after {
+    content: '';
+    display: table;
+  }
+
+  &:after {
+    clear: both;
+  }
 
   .feature-image {
     margin-bottom: 35px;
@@ -361,12 +395,14 @@ body, html {
     align-items: center;
     justify-content: space-between;
     padding: 0 15%;
+    margin-bottom: 20px;
   }
 
   a {
     display: inline-block;
-    align-self: middle;
+    align-self: center;
     transition: all 0.3s ease;
+    max-width: 276px;
 
     &:active, &:hover {
       transform: scale(1.2, 1.2);
@@ -375,6 +411,7 @@ body, html {
 
   img {
     margin: 0 20px;
+    max-width: 100%;
   }
 
   @media screen and (max-width: 990px) {

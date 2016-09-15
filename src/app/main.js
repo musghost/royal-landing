@@ -18,6 +18,43 @@ const styles = {
   }
 };
 
+const logos = [
+  [
+    {
+      image: 'allgo.png',
+      url: 'http://allgo.mx/#/categoria/musica'
+    },
+    {
+      image: 'noja.png',
+      url: 'http://allgo.mx/#/categoria/musica'
+    },
+    {
+      image: 'ocesa.png',
+      url: 'http://www.ocesa.com.mx/'
+    }
+  ],
+  [
+    {
+      image: '24horas_Gris.png',
+      url: 'http://issuu.com/diario24horas/docs/24horas_edicion1280ok/19?e=4036297/38785671'
+    },
+    {
+      image: 'Addictware_Gris.png',
+      url: 'http://addictware.com.mx/software/apps/9271-alcohol-domicilio-royal-ecommerce-app'
+    },
+    {
+      image: 'Webadictos_Gris.png',
+      url: 'https://webadictos.com/2016/09/08/royal-aplicacion-licoreria-domicilio/'
+    }
+  ],
+  [
+    {
+      image: 'Pulso_Gris.png',
+      url: 'http://pulsosocial.com/2016/09/09/royal-app-on-demand-licor-domicilio-ciudad-de-mexico/'
+    }
+  ]
+];
+
 export class Main extends Component {
   componentDidMount() {
     const other = {
@@ -28,10 +65,10 @@ export class Main extends Component {
       scale    : 1.1
     };
     window.sr = ScrollReveal();
-    sr.reveal('.description', { duration: 1000 }, 50);
+    /*sr.reveal('.description', { duration: 1000 }, 50);
     sr.reveal('.feature-image', other);
     sr.reveal('.logos', { duration: 1000 }, 50);
-    sr.reveal('.logo1', { duration: 2000 }, 50);
+    sr.reveal('.logo1', { duration: 2000 }, 50);*/
   }
 
   render() {
@@ -88,14 +125,30 @@ export class Main extends Component {
         </section>
         <section className="logos">
           <div>
-            <a href="#" target="_blank">
+            <a href="http://allgo.mx/#/categoria/musica" target="_blank">
               <img src="assets/images/allgo.png" className="logo1" />
             </a>
             <a href="#" target="_blank">
               <img src="assets/images/noja.png" className="logo1" />
             </a>
-            <a href="#" target="_blank">
+            <a href="http://www.ocesa.com.mx/" target="_blank">
               <img src="assets/images/ocesa.png" className="logo1" />
+            </a>
+          </div>
+          <div>
+            <a href="http://issuu.com/diario24horas/docs/24horas_edicion1280ok/19?e=4036297/38785671" target="_blank">
+              <img src="assets/images/24horas_Gris.png" className="logo1" />
+            </a>
+            <a href="http://addictware.com.mx/software/apps/9271-alcohol-domicilio-royal-ecommerce-app" target="_blank">
+              <img src="assets/images/Addictware_Gris.png" className="logo1" />
+            </a>
+            <a href="https://webadictos.com/2016/09/08/royal-aplicacion-licoreria-domicilio/" target="_blank">
+              <img src="assets/images/Webadictos_Gris.png" className="logo1" />
+            </a>
+          </div>
+          <div>
+            <a href="http://pulsosocial.com/2016/09/09/royal-app-on-demand-licor-domicilio-ciudad-de-mexico/" target="_blank">
+              <img src="assets/images/Pulso_Gris.png" className="logo1" />
             </a>
           </div>
         </section>
