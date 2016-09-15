@@ -398,6 +398,18 @@ section {
     margin-bottom: 20px;
   }
 
+  &.logos-gray {
+    background: #EAEAEB;
+
+    a {
+      max-width: 20%;
+
+      @media screen and (max-width: 990px) {
+        max-width: 276px;
+      }
+    }
+  }
+
   a {
     display: inline-block;
     align-self: center;

@@ -135,6 +135,8 @@ export class Main extends Component {
               <img src="assets/images/ocesa.png" className="logo1" />
             </a>
           </div>
+        </section>
+        <section className="logos logos-gray">
           <div>
             <a href="http://issuu.com/diario24horas/docs/24horas_edicion1280ok/19?e=4036297/38785671" target="_blank">
               <img src="assets/images/24horas_Gris.png" className="logo1" />
@@ -145,8 +147,6 @@ export class Main extends Component {
             <a href="https://webadictos.com/2016/09/08/royal-aplicacion-licoreria-domicilio/" target="_blank">
               <img src="assets/images/Webadictos_Gris.png" className="logo1" />
             </a>
-          </div>
-          <div>
             <a href="http://pulsosocial.com/2016/09/09/royal-app-on-demand-licor-domicilio-ciudad-de-mexico/" target="_blank">
               <img src="assets/images/Pulso_Gris.png" className="logo1" />
             </a>
