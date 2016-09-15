@@ -12,12 +12,17 @@ export class Header extends Component {
             <ul className="social-net">
               <li>
                 <a href="https://www.facebook.com/getroyalDF/" target="_blank">
-                  <img src="assets/images/facebook.png" />
+                  <i className="fa fa-facebook"></i>
                 </a>
               </li>
               <li>
                 <a href="https://www.instagram.com/getroyalmx/" target="_blank">
-                  <img src="assets/images/instagram.png" />
+                  <i className="fa fa-instagram"></i>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/getroyalmx" target="_blank">
+                  <i className="fa fa-twitter"></i>
                 </a>
               </li>
             </ul>
