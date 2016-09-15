@@ -11,7 +11,7 @@ export class Header extends Component {
           <div className='menu'>
             <ul>
               <li>
-                <a href="#">Royal para negocios</a>
+                <a href="mailto:hola@getroyal.mx">Royal para negocios</a>
               </li>
               <li>
                 <a href="#" className='start'>Entrar</a>
@@ -19,12 +19,12 @@ export class Header extends Component {
             </ul>
             <ul className="social-net">
               <li>
-                <a href="#" target="_blank">
+                <a href="https://www.facebook.com/getroyalDF/" target="_blank">
                   <img src="assets/images/facebook.png" />
                 </a>
               </li>
               <li>
-                <a href="#" target="_blank">
+                <a href="https://www.instagram.com/getroyalmx/" target="_blank">
                   <img src="assets/images/instagram.png" />
                 </a>
               </li>
@@ -44,10 +44,10 @@ export class Header extends Component {
           <h4>Cerveza, licores, hielos, botana y más...</h4>
 
           <div className="stores">
-            <a className="store" href="#" target="_blank">
+            <a className="store" href="https://itunes.apple.com/mx/app/royal-licoreria-a-domicilio/id1082398154?l=en&mt=8" target="_blank">
               <img src="assets/images/app-store-logo.png" />
             </a>
-            <a className="store google" href="#" target="_blank">
+            <a className="store google" href="https://play.google.com/store/apps/details?id=cc.mellow.getroyal" target="_blank">
               <img src="assets/images/googleplay-store.png" />
             </a>
           </div>

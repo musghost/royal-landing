@@ -16,7 +16,6 @@ module.exports = {
         loader: 'eslint'
       }
     ],
-
     loaders: [
       {
         test: /.json$/,
@@ -26,12 +25,22 @@ module.exports = {
       },
       {
         test: /\.(css|scss)$/,
-        loaders: ExtractTextPlugin.extract('style', 'css?minimize!sass', 'postcss')
+        loaders: [
+          'style',
+          'css',
+          'sass',
+          'postcss'
+        ]
+      },
+      {
+        test: /\.(png|jpg|jpeg|gif|svg|woff)$/,
+        loader: 'url-loader?limit=10000',
       },
       {
         test: /\.js$/,
         exclude: /node_modules/,
         loaders: [
+          'react-hot',
           'babel'
         ]
       }

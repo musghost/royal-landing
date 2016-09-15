@@ -1,4 +1,5 @@
 $gold: #c59643;
+$goldh: #ffc257;
 
 body, html {
   height: 100%;
@@ -65,6 +66,7 @@ body, html {
 
     @media screen and (max-width: 990px) {
       flex-direction: column;
+      padding: 40px 0;
 
       .logo {
         text-align: center;
@@ -115,6 +117,7 @@ body, html {
       }
       a {
         color: #fff;
+        transition: all 0.3s ease;
       }
     }
   }
@@ -126,6 +129,10 @@ body, html {
       &:before {
         display: none;
       }
+    }
+
+    a:hover, a:active {
+      transform: scale(1.2, 1.2);
     }
   }
 
@@ -149,6 +156,7 @@ body, html {
 
       &:hover {
         text-decoration: none;
+        background: $goldh;
       }
     }
   }
@@ -278,6 +286,7 @@ body, html {
         width: 211px;
         height: 32px;
         line-height: 32px;
+        transition: all 0.3s ease;
 
         &:hover, &:active {
           background: #fff;
@@ -345,6 +354,7 @@ body, html {
   background: #2f3146;
   padding: 100px 0;
   text-align: center;
+  position: relative;
 
   & > div {
     display: flex;
@@ -356,6 +366,11 @@ body, html {
   a {
     display: inline-block;
     align-self: middle;
+    transition: all 0.3s ease;
+
+    &:active, &:hover {
+      transform: scale(1.2, 1.2);
+    }
   }
 
   img {
