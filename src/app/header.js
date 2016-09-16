@@ -11,7 +11,7 @@ export class Header extends Component {
           <div className='menu'>
             <ul className="social-net">
               <li>
-                <a href="https://www.facebook.com/getroyalDF/" target="_blank">
+                <a href="https://www.facebook.com/getroyalCDMX/" target="_blank">
                   <i className="fa fa-facebook"></i>
                 </a>
               </li>

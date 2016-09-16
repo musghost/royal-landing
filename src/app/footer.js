@@ -9,11 +9,11 @@ export class Footer extends Component {
             <img src="assets/images/moto.png" />
           </div>
           <div className="elem hour">
-            <p>Lunes y Martes: 12:00 PM - 9 PM</p>
-            <p>Miércoles: 12:00 PM - 1 AM</p>
-            <p>Jueves y Viernes: 12:00 PM - 3 AM</p>
-            <p>Sábado: 10:00 AM - 3 AM</p>
-            <p>Domingo: 10:00 AM - 10 PM</p>
+            <p>Lunes y Martes: 12:00 PM - 9:00 PM</p>
+            <p>Miércoles: 12:00 PM - 1:00 AM</p>
+            <p>Jueves y Viernes: 12:00 PM - 3:00 AM</p>
+            <p>Sábado: 10:00 AM - 3:00 AM</p>
+            <p>Domingo: 10:00 AM - 10:00 PM</p>
           </div>
         </div>
         <div className="bars">

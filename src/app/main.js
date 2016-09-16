@@ -123,19 +123,6 @@ export class Main extends Component {
             <img src="assets/images/feature3.png" />
           </div>
         </section>
-        <section className="logos">
-          <div>
-            <a href="http://allgo.mx/#/categoria/musica" target="_blank">
-              <img src="assets/images/allgo.png" className="logo1" />
-            </a>
-            <a href="#" target="_blank">
-              <img src="assets/images/noja.png" className="logo1" />
-            </a>
-            <a href="http://www.ocesa.com.mx/" target="_blank">
-              <img src="assets/images/ocesa.png" className="logo1" />
-            </a>
-          </div>
-        </section>
         <section className="logos logos-gray">
           <div>
             <a href="http://issuu.com/diario24horas/docs/24horas_edicion1280ok/19?e=4036297/38785671" target="_blank">
