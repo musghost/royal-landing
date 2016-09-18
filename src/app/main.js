@@ -65,10 +65,10 @@ export class Main extends Component {
       scale    : 1.1
     };
     window.sr = ScrollReveal();
-    /*sr.reveal('.description', { duration: 1000 }, 50);
+    sr.reveal('.description', { duration: 1000 }, 50);
     sr.reveal('.feature-image', other);
     sr.reveal('.logos', { duration: 1000 }, 50);
-    sr.reveal('.logo1', { duration: 2000 }, 50);*/
+    sr.reveal('.logo1', { duration: 2000 }, 50);
   }
 
   render() {
@@ -121,19 +121,6 @@ export class Main extends Component {
               <img src="assets/images/feature3.jpg" />
             </div>
             <img src="assets/images/feature3.png" />
-          </div>
-        </section>
-        <section className="logos">
-          <div>
-            <a href="http://allgo.mx/#/categoria/musica" target="_blank">
-              <img src="assets/images/allgo.png" className="logo1" />
-            </a>
-            <a href="#" target="_blank">
-              <img src="assets/images/noja.png" className="logo1" />
-            </a>
-            <a href="http://www.ocesa.com.mx/" target="_blank">
-              <img src="assets/images/ocesa.png" className="logo1" />
-            </a>
           </div>
         </section>
         <section className="logos logos-gray">
