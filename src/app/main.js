@@ -4,6 +4,7 @@ import {Header} from './header';
 import {Title} from './title';
 import {Techs} from './techs/techs';
 import {Footer} from './footer';
+import $ from 'jquery';
 
 const styles = {
   container: {
@@ -19,20 +20,6 @@ const styles = {
 };
 
 const logos = [
-  [
-    {
-      image: 'allgo.png',
-      url: 'http://allgo.mx/#/categoria/musica'
-    },
-    {
-      image: 'noja.png',
-      url: 'http://allgo.mx/#/categoria/musica'
-    },
-    {
-      image: 'ocesa.png',
-      url: 'http://www.ocesa.com.mx/'
-    }
-  ],
   [
     {
       image: '24horas_Gris.png',
@@ -51,11 +38,29 @@ const logos = [
     {
       image: 'Pulso_Gris.png',
       url: 'http://pulsosocial.com/2016/09/09/royal-app-on-demand-licor-domicilio-ciudad-de-mexico/'
+    },
+    {
+      image: 'Xataka_Gris.png',
+      url: 'http://m.xataka.com.mx/aplicaciones-para-smartphones/alcohol-a-domicilio-royal-es-la-solucion-a-tus-problemas-en-ciudad-de-mexico'
+    },
+    {
+      image: 'B_M_Gris.png',
+      url: 'http://www.businessandmarketingtodaynews.com/socialmedia-12/'
     }
   ]
 ];
 
 export class Main extends Component {
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      index: 0
+    };
+    this.changeLogos = this.changeLogos.bind(this);
+  }
+
   componentDidMount() {
     const other = {
       delay    : 200,
@@ -69,9 +74,45 @@ export class Main extends Component {
     sr.reveal('.feature-image', other);
     sr.reveal('.logos', { duration: 1000 }, 50);
     sr.reveal('.logo1', { duration: 2000 }, 50);
+
+    setTimeout(() => {
+      this.changeLogos();
+    }, 6000);
+  }
+
+  changeLogos() {
+    const max = logos.length;
+    let next;
+    let node = $('.logos').find('div');
+    const _this = this;
+
+    if(this.state.index + 1 >= max) {
+      next = 0;
+    } else {
+      next = this.state.index + 1;
+    }
+
+    node.animate({
+      opacity: 0
+    }, 1000, () => {
+      this.setState({index: next});
+      node.animate({
+        opacity: 1
+      }, 1000, () => {
+        node.removeAttr();
+        setTimeout(() => {
+          _this.changeLogos();
+        }, 6000);
+      });
+    });
   }
 
   render() {
+    let links = logos[this.state.index].map((logo, key) => {
+      return (<a href={logo.url} target="_blank" key={key}>
+          <img src={`assets/images/${logo.image}`} className="logo1" />
+        </a>);
+    });
     return (
       <div style={styles.container}>
         <Header/>
@@ -124,20 +165,7 @@ export class Main extends Component {
           </div>
         </section>
         <section className="logos logos-gray">
-          <div>
-            <a href="http://issuu.com/diario24horas/docs/24horas_edicion1280ok/19?e=4036297/38785671" target="_blank">
-              <img src="assets/images/24horas_Gris.png" className="logo1" />
-            </a>
-            <a href="http://addictware.com.mx/software/apps/9271-alcohol-domicilio-royal-ecommerce-app" target="_blank">
-              <img src="assets/images/Addictware_Gris.png" className="logo1" />
-            </a>
-            <a href="https://webadictos.com/2016/09/08/royal-aplicacion-licoreria-domicilio/" target="_blank">
-              <img src="assets/images/Webadictos_Gris.png" className="logo1" />
-            </a>
-            <a href="http://pulsosocial.com/2016/09/09/royal-app-on-demand-licor-domicilio-ciudad-de-mexico/" target="_blank">
-              <img src="assets/images/Pulso_Gris.png" className="logo1" />
-            </a>
-          </div>
+          <div>{links}</div>
         </section>
         <Footer/>
       </div>
