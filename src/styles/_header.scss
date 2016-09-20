@@ -2,18 +2,15 @@ $gold: #c59643;
 $goldh: #ffc257;
 
 body, html {
-  height: 100%;
   position: relative;
   @media screen and (max-width: 990px) {
     height: inherit;
     #root {
-      min-height: inherit;
     }
   }
 }
 
 #root {
-  min-height: 100%;
   position: relative;
 }
 
@@ -41,15 +38,12 @@ section {
     color: #2f3146;
   }
   box-sizing: border-box;
-  min-height: 100%;
   position: relative;
-  padding-bottom: 44%;
 
   @media screen and (max-width: 990px) {
-    min-height: auto;
     padding-bottom: 0;
     box-sizing: content-box;
-
+    height: inherit;
     .cup {
       display: none;
     }
@@ -73,9 +67,9 @@ section {
   }
 
   .phone {
-    position: absolute;
-    right: 10%;
-    bottom: -10px;
+    float: right;
+    margin-top: -150px;
+    margin-right: 150px;
 
     img {
       max-width: 100%;
@@ -83,7 +77,8 @@ section {
 
     @media screen and (max-width: 990px) {
       position: static;
-      margin-top: 40px;
+      margin: 40px auto 0;
+      float: none;
     }
   }
 

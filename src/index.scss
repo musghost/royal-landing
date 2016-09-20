@@ -18,10 +18,9 @@
 
 html, body, #root {
   margin: 0;
-  height: 100%;
   font-family: 'bariol';
+  position: relative;
   & > div {
-    height: 100%;
     position: relative;
   }
 }
