@@ -47,6 +47,12 @@ const logos = [
       image: 'B_M_Gris.png',
       url: 'http://www.businessandmarketingtodaynews.com/socialmedia-12/'
     }
+  ],
+  [
+    {
+      image: 'Milenio_Gris.png',
+      url: 'http://www.milenio.com/negocios/emprendedores/royal_app-royal-alcohol_domicilio-app_venta_alcohol-fiesta_domicilio-app-milenio_0_814118763.html'
+    }
   ]
 ];
 
