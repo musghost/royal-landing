@@ -5,6 +5,7 @@ import {Title} from './title';
 import {Techs} from './techs/techs';
 import {Footer} from './footer';
 import $ from 'jquery';
+import Slider from 'react-slick';
 
 const styles = {
   container: {
@@ -17,6 +18,15 @@ const styles = {
     display: 'flex',
     flexDirection: 'column'
   }
+};
+
+const slideSettings = {
+  dots: true,
+  arrows: true,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 1,
+  slidesToScroll: 1
 };
 
 const logos = [
@@ -32,13 +42,13 @@ const logos = [
     {
       image: 'Webadictos_Gris.png',
       url: 'https://webadictos.com/2016/09/08/royal-aplicacion-licoreria-domicilio/'
-    }
-  ],
-  [
+    },
     {
       image: 'Pulso_Gris.png',
       url: 'http://pulsosocial.com/2016/09/09/royal-app-on-demand-licor-domicilio-ciudad-de-mexico/'
-    },
+    }
+  ],
+  [
     {
       image: 'Xataka_Gris.png',
       url: 'http://m.xataka.com.mx/aplicaciones-para-smartphones/alcohol-a-domicilio-royal-es-la-solucion-a-tus-problemas-en-ciudad-de-mexico'
@@ -46,9 +56,7 @@ const logos = [
     {
       image: 'B_M_Gris.png',
       url: 'http://www.businessandmarketingtodaynews.com/socialmedia-12/'
-    }
-  ],
-  [
+    },
     {
       image: 'Milenio_Gris.png',
       url: 'http://www.milenio.com/negocios/emprendedores/royal_app-royal-alcohol_domicilio-app_venta_alcohol-fiesta_domicilio-app-milenio_0_814118763.html'
@@ -64,7 +72,6 @@ export class Main extends Component {
     this.state = {
       index: 0
     };
-    this.changeLogos = this.changeLogos.bind(this);
   }
 
   componentDidMount() {
@@ -80,44 +87,16 @@ export class Main extends Component {
     sr.reveal('.feature-image', other);
     sr.reveal('.logos', { duration: 1000 }, 50);
     sr.reveal('.logo1', { duration: 2000 }, 50);
-
-    setTimeout(() => {
-      this.changeLogos();
-    }, 6000);
-  }
-
-  changeLogos() {
-    const max = logos.length;
-    let next;
-    let node = $('.logos').find('div');
-    const _this = this;
-
-    if(this.state.index + 1 >= max) {
-      next = 0;
-    } else {
-      next = this.state.index + 1;
-    }
-
-    node.animate({
-      opacity: 0
-    }, 1000, () => {
-      this.setState({index: next});
-      node.animate({
-        opacity: 1
-      }, 1000, () => {
-        node.removeAttr();
-        setTimeout(() => {
-          _this.changeLogos();
-        }, 6000);
-      });
-    });
   }
 
   render() {
-    let links = logos[this.state.index].map((logo, key) => {
-      return (<a href={logo.url} target="_blank" key={key}>
-          <img src={`assets/images/${logo.image}`} className="logo1" />
-        </a>);
+    let links = logos.map((row, rowKey) => {
+      let renderedLogos = row.map((logo, key) => {
+        return (<a href={logo.url} target="_blank" key={key}>
+            <img src={`assets/images/${logo.image}`} className="logo1" />
+          </a>);
+      });
+      return <div key={rowKey}>{renderedLogos}</div>;
     });
     return (
       <div style={styles.container}>
@@ -171,7 +150,9 @@ export class Main extends Component {
           </div>
         </section>
         <section className="logos logos-gray">
-          <div>{links}</div>
+          <Slider {...slideSettings}>
+            {links}
+          </Slider>
         </section>
         <Footer/>
       </div>
