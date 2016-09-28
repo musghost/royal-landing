@@ -21,6 +21,8 @@ const styles = {
 };
 
 const slideSettings = {
+  autoplay: true,
+  autoplaySpeed: 5000,
   dots: true,
   arrows: true,
   infinite: true,
@@ -60,6 +62,10 @@ const logos = [
     {
       image: 'Milenio_Gris.png',
       url: 'http://www.milenio.com/negocios/emprendedores/royal_app-royal-alcohol_domicilio-app_venta_alcohol-fiesta_domicilio-app-milenio_0_814118763.html'
+    },
+    {
+      image: 'Reforma_Gris.png',
+      url: 'http://busquedas.gruporeforma.com/reforma/Libre/VisorNota.aspx?id=2004493%7CArticulosCMS&md5=227b573c371932f03e2f0fce17b9dd3c'
     }
   ]
 ];
