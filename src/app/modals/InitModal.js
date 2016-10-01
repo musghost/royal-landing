@@ -1,0 +1,48 @@
+import React, {Component} from 'react';
+import ReactDOM from 'react-dom';
+import {Modal, ModalBody, Button, ModalHeader, ModalFooter} from 'elemental';
+
+class InitModal extends Component {
+    constructor(props) {
+      super(props);
+      this.handleUserCancel = this.handleUserCancel.bind(this);
+    }
+
+    handleUserCancel() {
+      window.location.href = "https://google.com.mx";
+    }
+
+    render() {
+        return (
+            <Modal width={778} isOpen={this.props.isOpen} backdropClosesModal={true}>
+                <ModalBody>
+                    <div className="modal__ContentContainer">
+                        <div className="modal__HeadIconContainer">
+                            <img src="assets/images/icon.png"/>
+                        </div>
+                        <div className="modal__TextContainer">
+                            <h1>¡bienvenido!</h1>
+                            <div className="modal__TextBody">
+                                <p>Nuestro compromiso es que celebres de manera responsable, sólo confirma tu mayoria de edad y disfruta con nosotros.</p>
+                            </div>
+                            <div className="modal__TrigersContainer">
+                                <form>
+                                    <label>
+                                        <input onClick={this.props.onUserClose} type='radio' value='1' name='confirm'/>Si
+                                    </label>
+                                    <label>
+                                        <input onClick={this.handleUserCancel} type='radio' value='0' name='cancel'/>No
+                                    </label>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </ModalBody>
+                <ModalFooter>
+                </ModalFooter>
+            </Modal>
+        );
+    }
+}
+
+export default InitModal

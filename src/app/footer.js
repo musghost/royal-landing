@@ -1,6 +1,21 @@
 import React, {Component} from 'react';
+import InitModal from './modals/InitModal.js';
 
 export class Footer extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      toggleModal: true
+    }
+    this.handleToggleModal = this.handleToggleModal.bind(this);
+  }
+
+  handleToggleModal() {
+      this.setState({
+          toggleModal: !this.state.toggleModal
+      });
+  };
+
   render() {
     return (
       <footer>
@@ -26,6 +41,7 @@ export class Footer extends Component {
         <div className="by-mellow">
           <p>Made by Mellow C&C // mellow.cc</p>
         </div>
+        <InitModal isOpen={this.state.toggleModal} onUserClose={this.handleToggleModal}/>
       </footer>
     );
   }
