@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import {Modal, ModalBody, Button, ModalHeader, ModalFooter} from 'elemental';
-import $ from 'jquery';
 
 class InitModal extends Component {
   constructor(props) {
@@ -11,12 +10,6 @@ class InitModal extends Component {
 
   handleUserCancel() {
     window.location.href = "https://google.com.mx";
-  }
-
-  componentDidMount() {
-    $('body').css({
-      overflow: 'hidden'
-    });
   }
 
   render() {
@@ -30,7 +23,7 @@ class InitModal extends Component {
             <div className="modal__TextContainer">
               <h1>¡bienvenido!</h1>
               <div className="modal__TextBody">
-                <p>Nuestro compromiso es que celebres de manera responsable, sólo confirma tu mayoria de edad y disfruta con nosotros. ¡Gracias!</p>
+                <p>Nuestro compromiso es que celebres de manera responsable, sólo confirma tu mayoría de edad y disfruta con nosotros. ¡Gracias!</p>
               </div>
               <div className="modal__TrigersContainer">
                 <form>

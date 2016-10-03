@@ -67,6 +67,34 @@ const logos = [
       image: 'Reforma_Gris.png',
       url: 'http://busquedas.gruporeforma.com/reforma/Libre/VisorNota.aspx?id=2004493%7CArticulosCMS&md5=227b573c371932f03e2f0fce17b9dd3c'
     }
+  ],
+  [
+    {
+      image: 'Miambiente_Gris.png',
+      url: 'http://www.miambiente.com.mx/general/llega-la-app-royal-de-delivery-de-alcohol-a-domicilio'
+    },
+    {
+      image: 'Funners_Gris.png',
+      url: 'http://wearefunners.com/2016/09/09/las-5-mejores-apps-para-pedir-alcohol-domicilio/'
+    },
+    {
+      image: 'Sanluis_Gris.png',
+      url: 'http://www.sanluisencontacto.com/noticias/ya-en-mexico-alcohol-a-domicilio-con-royal/'
+    },
+    {
+      image: 'Bienhecho_Gris.png',
+      url: 'http://www.bienhecho.com.mx/entretenimiento/alcohol-a-domicilio-royal-es-la-solucion-a-tus-problemas-en-ciudad-de-mexico/'
+    }
+  ],
+  [
+    {
+      image: 'Mural_Gris.png',
+      url: 'http://www.mural.com/aplicacioneslibre/preacceso/articulo/default.aspx?id=940210&fuente=md&urlredirect=http://www.mural.com/aplicaciones/articulo/default.aspx?Id=940210&Fuente=MD'
+    },
+    {
+      image: 'Appicker_Gris.png',
+      url: 'http://www.apppicker.com/apps/1082398154/royal--licorera-a-domicilio'
+    }
   ]
 ];
 

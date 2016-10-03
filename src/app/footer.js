@@ -26,6 +26,10 @@ export class Footer extends Component {
       this.setState({
         toggleModal: false
       });
+    } else {
+      $('body').css({
+        overflow: 'hidden'
+      });
     }
   }
 
