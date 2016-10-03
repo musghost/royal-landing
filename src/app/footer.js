@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import InitModal from './modals/InitModal.js';
 import $ from 'jquery';
+import cookie from 'react-cookie';
 
 export class Footer extends Component {
   constructor(props) {
@@ -13,11 +14,20 @@ export class Footer extends Component {
 
   handleToggleModal() {
     $('body').removeAttr('style');
+    cookie.save('splash', true, {path: '/'});
 
     this.setState({
-        toggleModal: !this.state.toggleModal
+      toggleModal: !this.state.toggleModal
     });
   };
+
+  componentWillMount() {
+    if(typeof cookie.load('splash') !== 'undefined') {
+      this.setState({
+        toggleModal: false
+      });
+    }
+  }
 
   render() {
     return (

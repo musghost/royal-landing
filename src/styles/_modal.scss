@@ -279,7 +279,10 @@
       &:hover {
         span {
           box-shadow: 0px 0px 3px 3px #54708e;
-          content: "\f00c";
+
+          &:after {
+            opacity: 1;
+          }
         }
       }
 
@@ -290,8 +293,23 @@
         background: #fff;
         border-radius: 3px;
         float: left;
-        font: normal normal normal 14px/1 FontAwesome;
         transition: all 0.3s ease;
+        position: relative;
+
+        &:after {
+          transition: all 0.3s ease;
+          position: absolute;
+          content: '';
+          left: 50%;
+          top: 50%;
+          width: 10px;
+          height: 10px;
+          background: #353245;
+          border-radius: 2px;
+          margin-left: -5px;
+          margin-top: -5px;
+          opacity: 0;
+        }
       }
 
       input[type='radio']:checked + span{
