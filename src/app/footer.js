@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import InitModal from './modals/InitModal.js';
+import $ from 'jquery';
 
 export class Footer extends Component {
   constructor(props) {
@@ -11,9 +12,11 @@ export class Footer extends Component {
   }
 
   handleToggleModal() {
-      this.setState({
-          toggleModal: !this.state.toggleModal
-      });
+    $('body').removeAttr('style');
+
+    this.setState({
+        toggleModal: !this.state.toggleModal
+    });
   };
 
   render() {

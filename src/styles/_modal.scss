@@ -1,3 +1,43 @@
+@keyframes modalDialogLeave {
+  from {
+    opacity: 1;
+    -webkit-transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    -webkit-transform: scale(0.8);
+  }
+}
+
+@keyframes modalBackdropEnter {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modalBackdropLeave {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes modalDialogEnter {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 @mixin modal-placeholder {
   color: #000;
   font-weight: 400;
@@ -17,8 +57,6 @@
   top: 0;
   visibility: hidden;
   z-index: 110;
-  border-top: 3px solid #d2a509;
-  border-bottom: 3px solid #d2a509;
   -webkit-overflow-scrolling: touch;
 }
 .Modal.is-open {
@@ -31,11 +69,13 @@
   position: relative;
   width: auto;
   z-index: 2;
+  border-top: 7px solid #d2a509;
+  border-bottom: 7px solid #d2a509;
   background: {
-      image: url(assets/images/modal-background.png);
-      repeat: no-repeat;
-      position: -100px 0;
-    }
+    image: url(assets/images/modal-background.png);
+    repeat: no-repeat;
+    position: -100px 0;
+  }
 }
 .Modal-dialog-enter {
   animation-name: modalDialogEnter;
@@ -110,7 +150,7 @@
   color: #d64242;
 }
 .Modal__body {
-  margin: 100px 10px;
+  margin: 80px 10px 50px;
   padding: 20px 20px;
   background-color: #353245;
   border: 3px solid #d2a509;
@@ -175,10 +215,11 @@
   }
 
   p {
-    font-size: 0.86em;
+    font-size: 0.75em;
     text-align: center;
     box-sizing: border-box;
     margin-top: 0;
+    line-height: 1.4em;
   }
 
   strong {
@@ -200,26 +241,69 @@
   }
 
   .modal__HeadIconContainer {
-      text-align: center;
+    text-align: center;
+    margin-top: -65px;
+    margin-bottom: 50px;
   }
 
   .modal__TextContainer h1 {
-      margin: 0 35px;
-      text-transform: uppercase;
-      text-align: center;
-      color: #FFF;
-      font-family: 'bariol';
-      font-size: 45px;
-      padding-bottom: 20px;
-      border-bottom: 1px solid #FFF;
+    margin: 0 10px;
+    text-transform: uppercase;
+    text-align: center;
+    color: #FFF;
+    font-family: 'bariol';
+    font-size: 45px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #FFF;
   }
 
   .modal__TextBody {
-          margin-top: 30px;
-          text-align: center;
-          color: #FFF;
-          font-size: 1.5em;
-          font-weight: bold;
+    margin-top: 30px;
+    text-align: center;
+    color: #FFF;
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+
+  .modal__TrigersContainer {
+    text-align: center;
+    color: #fff;
+
+    label {
+      display: inline-block;
+      margin: 0 20px;
+      position: relative;
+      line-height: 20px;
+      cursor: pointer;
+
+      &:hover {
+        span {
+          box-shadow: 0px 0px 3px 3px #54708e;
+          content: "\f00c";
+        }
+      }
+
+      span {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        background: #fff;
+        border-radius: 3px;
+        float: left;
+        font: normal normal normal 14px/1 FontAwesome;
+        transition: all 0.3s ease;
+      }
+
+      input[type='radio']:checked + span{
+        content: "\f00c";
+      }
     }
+
+    input {
+      opacity: 0;
+      width: 1px;
+      height: 1px;
+    }
+  }
 
 }
