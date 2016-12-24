@@ -4,6 +4,8 @@ import {Header} from './header';
 import {Title} from './title';
 import {Techs} from './techs/techs';
 import {Footer} from './footer';
+import $ from 'jquery';
+import Slider from 'react-slick';
 
 const styles = {
   container: {
@@ -18,21 +20,18 @@ const styles = {
   }
 };
 
+const slideSettings = {
+  autoplay: true,
+  autoplaySpeed: 5000,
+  dots: true,
+  arrows: true,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 1,
+  slidesToScroll: 1
+};
+
 const logos = [
-  [
-    {
-      image: 'allgo.png',
-      url: 'http://allgo.mx/#/categoria/musica'
-    },
-    {
-      image: 'noja.png',
-      url: 'http://allgo.mx/#/categoria/musica'
-    },
-    {
-      image: 'ocesa.png',
-      url: 'http://www.ocesa.com.mx/'
-    }
-  ],
   [
     {
       image: '24horas_Gris.png',
@@ -45,17 +44,70 @@ const logos = [
     {
       image: 'Webadictos_Gris.png',
       url: 'https://webadictos.com/2016/09/08/royal-aplicacion-licoreria-domicilio/'
+    },
+    {
+      image: 'Pulso_Gris.png',
+      url: 'http://pulsosocial.com/2016/09/09/royal-app-on-demand-licor-domicilio-ciudad-de-mexico/'
     }
   ],
   [
     {
-      image: 'Pulso_Gris.png',
-      url: 'http://pulsosocial.com/2016/09/09/royal-app-on-demand-licor-domicilio-ciudad-de-mexico/'
+      image: 'Xataka_Gris.png',
+      url: 'http://m.xataka.com.mx/aplicaciones-para-smartphones/alcohol-a-domicilio-royal-es-la-solucion-a-tus-problemas-en-ciudad-de-mexico'
+    },
+    {
+      image: 'B_M_Gris.png',
+      url: 'http://www.businessandmarketingtodaynews.com/socialmedia-12/'
+    },
+    {
+      image: 'Milenio_Gris.png',
+      url: 'http://www.milenio.com/negocios/emprendedores/royal_app-royal-alcohol_domicilio-app_venta_alcohol-fiesta_domicilio-app-milenio_0_814118763.html'
+    },
+    {
+      image: 'Reforma_Gris.png',
+      url: 'http://busquedas.gruporeforma.com/reforma/Libre/VisorNota.aspx?id=2004493%7CArticulosCMS&md5=227b573c371932f03e2f0fce17b9dd3c'
+    }
+  ],
+  [
+    {
+      image: 'Miambiente_Gris.png',
+      url: 'http://www.miambiente.com.mx/general/llega-la-app-royal-de-delivery-de-alcohol-a-domicilio'
+    },
+    {
+      image: 'Funners_Gris.png',
+      url: 'http://wearefunners.com/2016/09/09/las-5-mejores-apps-para-pedir-alcohol-domicilio/'
+    },
+    {
+      image: 'Sanluis_Gris.png',
+      url: 'http://www.sanluisencontacto.com/noticias/ya-en-mexico-alcohol-a-domicilio-con-royal/'
+    },
+    {
+      image: 'Bienhecho_Gris.png',
+      url: 'http://www.bienhecho.com.mx/entretenimiento/alcohol-a-domicilio-royal-es-la-solucion-a-tus-problemas-en-ciudad-de-mexico/'
+    }
+  ],
+  [
+    {
+      image: 'Mural_Gris.png',
+      url: 'http://www.mural.com/aplicacioneslibre/preacceso/articulo/default.aspx?id=940210&fuente=md&urlredirect=http://www.mural.com/aplicaciones/articulo/default.aspx?Id=940210&Fuente=MD'
+    },
+    {
+      image: 'Appicker_Gris.png',
+      url: 'http://www.apppicker.com/apps/1082398154/royal--licorera-a-domicilio'
     }
   ]
 ];
 
 export class Main extends Component {
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      index: 0
+    };
+  }
+
   componentDidMount() {
     const other = {
       delay    : 200,
@@ -65,13 +117,21 @@ export class Main extends Component {
       scale    : 1.1
     };
     window.sr = ScrollReveal();
-    /*sr.reveal('.description', { duration: 1000 }, 50);
+    sr.reveal('.description', { duration: 1000 }, 50);
     sr.reveal('.feature-image', other);
     sr.reveal('.logos', { duration: 1000 }, 50);
-    sr.reveal('.logo1', { duration: 2000 }, 50);*/
+    sr.reveal('.logo1', { duration: 2000 }, 50);
   }
 
   render() {
+    let links = logos.map((row, rowKey) => {
+      let renderedLogos = row.map((logo, key) => {
+        return (<a href={logo.url} target="_blank" key={key}>
+            <img src={`assets/images/${logo.image}`} className="logo1" />
+          </a>);
+      });
+      return <div key={rowKey}>{renderedLogos}</div>;
+    });
     return (
       <div style={styles.container}>
         <Header/>
@@ -124,20 +184,9 @@ export class Main extends Component {
           </div>
         </section>
         <section className="logos logos-gray">
-          <div>
-            <a href="http://issuu.com/diario24horas/docs/24horas_edicion1280ok/19?e=4036297/38785671" target="_blank">
-              <img src="assets/images/24horas_Gris.png" className="logo1" />
-            </a>
-            <a href="http://addictware.com.mx/software/apps/9271-alcohol-domicilio-royal-ecommerce-app" target="_blank">
-              <img src="assets/images/Addictware_Gris.png" className="logo1" />
-            </a>
-            <a href="https://webadictos.com/2016/09/08/royal-aplicacion-licoreria-domicilio/" target="_blank">
-              <img src="assets/images/Webadictos_Gris.png" className="logo1" />
-            </a>
-            <a href="http://pulsosocial.com/2016/09/09/royal-app-on-demand-licor-domicilio-ciudad-de-mexico/" target="_blank">
-              <img src="assets/images/Pulso_Gris.png" className="logo1" />
-            </a>
-          </div>
+          <Slider {...slideSettings}>
+            {links}
+          </Slider>
         </section>
         <Footer/>
       </div>

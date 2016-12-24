@@ -1,6 +1,38 @@
 import React, {Component} from 'react';
+import InitModal from './modals/InitModal.js';
+import $ from 'jquery';
+import cookie from 'react-cookie';
 
 export class Footer extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      toggleModal: true
+    }
+    this.handleToggleModal = this.handleToggleModal.bind(this);
+  }
+
+  handleToggleModal() {
+    $('body').removeAttr('style');
+    cookie.save('splash', true, {path: '/'});
+
+    this.setState({
+      toggleModal: !this.state.toggleModal
+    });
+  };
+
+  componentWillMount() {
+    if(typeof cookie.load('splash') !== 'undefined') {
+      this.setState({
+        toggleModal: false
+      });
+    } else {
+      $('body').css({
+        overflow: 'hidden'
+      });
+    }
+  }
+
   render() {
     return (
       <footer>
@@ -26,6 +58,7 @@ export class Footer extends Component {
         <div className="by-mellow">
           <p>Made by Mellow C&C // mellow.cc</p>
         </div>
+        <InitModal isOpen={this.state.toggleModal} onUserClose={this.handleToggleModal}/>
       </footer>
     );
   }

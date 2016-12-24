@@ -2,12 +2,15 @@ $gold: #c59643;
 $goldh: #ffc257;
 
 body, html {
-  height: 100%;
   position: relative;
+  @media screen and (max-width: 990px) {
+    height: inherit;
+    #root {
+    }
+  }
 }
 
 #root {
-  min-height: 100%;
   position: relative;
 }
 
@@ -35,15 +38,12 @@ section {
     color: #2f3146;
   }
   box-sizing: border-box;
-  min-height: 100%;
   position: relative;
-  padding-bottom: 44%;
 
   @media screen and (max-width: 990px) {
-    min-height: auto;
     padding-bottom: 0;
     box-sizing: content-box;
-
+    height: inherit;
     .cup {
       display: none;
     }
@@ -67,9 +67,9 @@ section {
   }
 
   .phone {
-    position: absolute;
-    right: 10%;
-    bottom: -10px;
+    float: right;
+    margin-top: -150px;
+    margin-right: 150px;
 
     img {
       max-width: 100%;
@@ -77,7 +77,8 @@ section {
 
     @media screen and (max-width: 990px) {
       position: static;
-      margin-top: 40px;
+      margin: 40px auto 0;
+      float: none;
     }
   }
 
@@ -386,16 +387,14 @@ section {
 
 .logos {
   background: #2f3146;
-  padding: 100px 0;
+  padding: 50px;
   text-align: center;
   position: relative;
+  overflow: hidden;
 
   & > div {
-    display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 15%;
-    margin-bottom: 20px;
   }
 
   &.logos-gray {
@@ -403,6 +402,7 @@ section {
 
     a {
       max-width: 20%;
+      margin: 0 10px;
 
       @media screen and (max-width: 990px) {
         max-width: 276px;
@@ -415,6 +415,7 @@ section {
     align-self: center;
     transition: all 0.3s ease;
     max-width: 276px;
+    vertical-align: middle;
 
     &:active, &:hover {
       transform: scale(1.2, 1.2);
@@ -424,6 +425,7 @@ section {
   img {
     margin: 0 20px;
     max-width: 100%;
+    max-height: 80px;
   }
 
   @media screen and (max-width: 990px) {
