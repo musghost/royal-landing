@@ -531,3 +531,26 @@ section {
     padding: 0;
   }
 }
+
+.terms {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 0 15%;
+
+  p {
+    text-align: right;
+    font-size: 1.1em;
+    letter-spacing: 2px;
+  }
+
+  @media screen and (max-width: 990px) {
+    flex-direction: column;
+    p {
+      text-align: center;
+      font-size: 1.1em;
+      letter-spacing: 2px;
+    }
+
+  }
+}

@@ -163,26 +163,28 @@ export class Main extends Component {
             </div>
           </div>
         </section>
+
         <section className="features">
           <div className="feature">
             <div className="feature-image">
               <img src="assets/images/feature1.jpg" />
             </div>
-            <img src="assets/images/feature1.png" />
+
           </div>
           <div className="feature">
             <div className="feature-image">
               <img src="assets/images/feature2.jpg" />
             </div>
-            <img src="assets/images/feature2.png" />
+
           </div>
           <div className="feature">
             <div className="feature-image">
               <img src="assets/images/feature3.jpg" />
             </div>
-            <img src="assets/images/feature3.png" />
+
           </div>
         </section>
+
         <section className="logos logos-gray">
           <Slider {...slideSettings}>
             {links}
