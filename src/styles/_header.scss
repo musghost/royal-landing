@@ -502,30 +502,41 @@ section {
 }
 
 .by-mellow {
-  background: #eceeef;
+  background: #ffffff;
   overflow: auto;
   zoom: 1;
-  text-align: right;
-  padding-right: 100px;
+  text-align: center;
   font-size: 13px;
   min-height: 50px;
   line-height: 50px;
   position: relative;
 
-  &:after {
-    background: {
-      image: url(assets/images/mellow.png);
-      repeat: no-repeat;
-      position: right center;
+    img{
+      height: 80px;
+      width: 80px;
     }
-    content: '';
-    width: 48px;
-    height: 48px;
-    position: absolute;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-  }
+    @media screen and (min-width: 990px){
+      img {
+          float: left;
+      }
+      img:first-child{
+        margin-left: 5em;
+      }
+    }
+  // &:after {
+  //   background: {
+  //     image: url(assets/images/mellow.png);
+  //     repeat: no-repeat;
+  //     position: right center;
+  //   }
+  //   content: '';
+  //   width: 48px;
+  //   height: 48px;
+  //   position: absolute;
+  //   right: 20px;
+  //   top: 50%;
+  //   transform: translateY(-50%);
+  // }
 
   p {
     padding: 0;
