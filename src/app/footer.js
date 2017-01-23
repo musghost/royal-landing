@@ -62,7 +62,9 @@ export class Footer extends Component {
             Aviso de privacidad</a></p>
           </div>
          <div className="by-mellow">
-            <img src="assets/images/Sellos-02.png" />
+          <a href="http://mellow.cc" target="_blank">
+             <img src="assets/images/Sellos-02.png" />
+          </a>   
             <img src="assets/images/Sellos-01.png" />
          </div>
         <InitModal isOpen={this.state.toggleModal} onUserClose={this.handleToggleModal}/>
