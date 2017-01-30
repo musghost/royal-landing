@@ -55,9 +55,18 @@ export class Footer extends Component {
           <div className="bar4"></div>
           <div className="bar5"></div>
         </div>
-        <div className="by-mellow">
-          <p>Made by Mellow C&C // mellow.cc</p>
-        </div>
+        <div className="terms">
+            <p><a href="http://royal-api.mellow.online/terms" target="_blank">
+            Terminos y Condiciones</a></p>
+            <p><a href="http://royal-api.mellow.online/privacy" target="_blank">
+            Aviso de privacidad</a></p>
+          </div>
+         <div className="by-mellow">
+              <img src="assets/images/Sellos-02.png" />
+           <a href="http://mellow.cc" target="_blank">
+              <img src="assets/images/Sellos-01.png" />
+            </a> 
+         </div>
         <InitModal isOpen={this.state.toggleModal} onUserClose={this.handleToggleModal}/>
       </footer>
     );
